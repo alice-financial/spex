@@ -23,9 +23,3 @@ else
   echo 'postgresql module already installed'
 fi
 
-if [ ! -e "/etc/puppet/modules/ruby/" ]; then
-  echo 'installing ruby module'
-  puppet module install puppetlabs-ruby --modulepath /etc/puppet/modules
-else
-  echo 'ruby module already installed'
-fi
