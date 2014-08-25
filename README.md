@@ -7,7 +7,8 @@ When I try to get a new piece of code working, it's often useful to have a stand
 
 Branch | Description
 -------|------------
-base_ruby_environment | A basic dev box for ruby development. No Rails dependencies. The box has postgres and sqlite installed
+base_ruby_environment | A basic dev box for ruby development. No Rails dependencies. The box installs postgres and sqlite, as well as the ruby 2.1 dev package (can be configured)
+base_rails_app | A smoke test for a rails dev environment, and as close to the output from `rails new ...` as possible. Postgresql is used for Active record instead of SQlite and rubyracer is used as a JavaScript runtime
 
 ## Before you begin
 1. Install [Vagrant] (http://www.vagrantup.com/downloads.html)
