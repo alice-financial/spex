@@ -30,7 +30,9 @@ class spex::trust_local_traffic{
 }
 class spex::create_db_role {
   class { 'postgresql::server':
-    locale  => 'en_US.UTF-8' }
+    encoding => 'UTF8',
+    locale   => 'en_US',
+  }
   postgresql::server::role { 'vagrant': superuser => true,}
 }
 

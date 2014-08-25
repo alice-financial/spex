@@ -22,3 +22,14 @@ config/secrets.yml
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
+
+#ignore devops stuff
+ops/.vagrant/
+ops/puppet/ssh/
+ops/puppet/ssl/
+ops/puppet/modules/apt/
+ops/puppet/modules/concat/
+ops/puppet/modules/firewall/
+ops/puppet/modules/postgresql/
+ops/puppet/modules/ruby/
+ops/puppet/modules/stdlib/

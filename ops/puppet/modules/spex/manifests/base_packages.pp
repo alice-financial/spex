@@ -32,6 +32,9 @@ class spex::base_packages{
   package { "libsqlite-dev":
     ensure => installed,
   }
+  package { "libsqlite3-ruby":
+    ensure => installed,
+  }
   package { "postgresql":
     ensure => installed,
   }
