@@ -8,6 +8,7 @@ class spex::base_packages{
   package { "build-essential":
     ensure => installed,
   }
+
   package { "zlib1g-dev":
     ensure => installed,
   }
