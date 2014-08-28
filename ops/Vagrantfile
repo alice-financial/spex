@@ -32,4 +32,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     puppet.hiera_config_path = "puppet/hiera.yaml"
     puppet.working_directory = "/etc/puppet"
   end
+
+  # EACH UP PROVISIONING
+  config.vm.provision 'shell', path: 'post_up_message.sh', run: 'always'
 end

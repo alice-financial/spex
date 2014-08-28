@@ -3,4 +3,3 @@
 
 # @see http://www.ubuntuupdates.org/ppa/brightbox_ruby_ng_experimental
 ruby::params::dev_package: 'ruby2.1-dev'
-ruby::params::dev_package: 'ruby2.1-dev'
