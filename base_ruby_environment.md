@@ -3,6 +3,8 @@ Spex: Base Ruby Environment
 
 This is a basic ruby development environment that doesn't yet have rails setup for it. It's there to demonstrate getting up and running using Vagrant and Puppet to install a standalone environment. General Instructions and details are provided in the main README file, so check those out first.
 
+Fore more information, check out the related post [on my blog] (http://www.eyefodder.com/2014/08/one-click-development-environment.html).
+
 ## Dev environment details
 Name | Value
 -----|------
