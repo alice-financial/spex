@@ -22,4 +22,3 @@ if [ ! -e "/etc/puppet/modules/postgresql/" ]; then
 else
   echo 'postgresql module already installed'
 fi
-

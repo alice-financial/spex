@@ -4,9 +4,13 @@
 # (c) 2014 Eyefodder, author: Paul Barnes-Hoggett
 # This code is licensed under MIT license (see LICENSE.txt for details)
 cd /app
-echo 'prepping rails app'
+echo 'installing app dependencies'
 bundle install
+echo 'creating databases (if needed)'
+rake db:create
+echo 'performing migrations'
 rake db:migrate
+echo 'seeding the db'
 rake db:seed
 echo '
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
