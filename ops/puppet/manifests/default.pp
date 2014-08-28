@@ -5,4 +5,6 @@ Exec {
 }
 include spex::base_packages
 include spex::postgres_setup
-include spex::ruby_setup
+
+# In this branch we are building ruby from source
+# include spex::ruby_setup
