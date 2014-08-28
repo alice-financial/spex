@@ -7,7 +7,8 @@ When I try to get a new piece of code working, it's often useful to have a stand
 
 Branch | Description
 -------|------------
-base_ruby_environment | A basic dev box for ruby development. No Rails dependencies. The box has postgres and sqlite installed
+base_ruby_environment | A basic dev box for ruby development. No Rails dependencies. The box installs postgres and sqlite, as well as the ruby 2.1 dev package (can be configured)
+base_rails_app | A smoke test for a rails dev environment, and as close to the output from `rails new ...` as possible. Postgresql is used for Active record instead of SQlite and rubyracer is used as a JavaScript runtime
 
 ## Before you begin
 1. Install [Vagrant] (http://www.vagrantup.com/downloads.html)
@@ -15,7 +16,7 @@ base_ruby_environment | A basic dev box for ruby development. No Rails dependenc
 3. Open a terminal window and cd to the 'ops' folder of this repo
 4. Type the following (you only need to do this on first run): `vagrant plugin install vagrant-vbguest`
 5. Now type `vagrant up` and witness as a new machine gets downloaded and configured. The guest box is where your code will run when you're working with it.
- 
+
 
 ### Warnings / Errors you will see that are nothing to worry about
 1. `std is not a tty`
