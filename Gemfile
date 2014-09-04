@@ -40,12 +40,15 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 group :development do
-  # rspec_guard_spork
+  # rspec_guard
   gem 'guard-rspec', require: false
+
+  # rspec_guard_spring
+  gem 'spring-commands-rspec'
 end
 
 group :development, :test do
-  # rspec_guard_spork
+  # rspec_guard
   gem 'rspec-rails', '~> 3.0.0'
 end
 

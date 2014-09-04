@@ -1,4 +1,4 @@
-Spex: Rspec Guard Spork
+Spex: Rspec Guard
 ===========================
 
 Building on the base_rails_app, we now want to start testing our app.
