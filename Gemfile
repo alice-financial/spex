@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.1.2'
+#ruby-gemset=spex
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
@@ -37,4 +39,13 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+group :development do
+  # rspec_guard_spork
+  gem 'guard-rspec', require: false
+end
+
+group :development, :test do
+  # rspec_guard_spork
+  gem 'rspec-rails', '~> 3.0.0'
+end
 
