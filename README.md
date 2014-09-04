@@ -10,6 +10,7 @@ Branch | Description
 base_ruby_environment | A basic dev box for ruby development. No Rails dependencies. The box installs postgres and sqlite, as well as the ruby 2.1 dev package (can be configured)
 base_rails_app | A smoke test for a rails dev environment, and as close to the output from `rails new ...` as possible. Postgresql is used for Active record instead of SQlite and rubyracer is used as a JavaScript runtime
 building_ruby_from_source | Showing how to compile Ruby from source as part of your Vagrant Box setup
+rspec_guard | Setting up Guard to to run your RSpec tests when files change
 
 ## Before you begin
 1. Install [Vagrant] (http://www.vagrantup.com/downloads.html)
