@@ -32,3 +32,5 @@ ops/puppet/modules/firewall/
 ops/puppet/modules/postgresql/
 ops/puppet/modules/ruby/
 ops/puppet/modules/stdlib/
+
+ops/guest_bash_profile

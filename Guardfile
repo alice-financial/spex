@@ -11,6 +11,17 @@
 #  * 'just' rspec: 'rspec'
 require 'active_support/core_ext'
 
+
+host_ip = ENV['HOST_IP']
+growl_pass = ENV['GROWL_PASSWORD']
+PLACEHOLDER_GROWL_PASS='enter_growl_password'
+
+unless host_ip.blank? || growl_pass.blank? || (growl_pass==PLACEHOLDER_GROWL_PASS)
+  notification :gntp, :sticky => false, :host => ENV['HOST_IP'], :password => ENV['GROWL_PASSWORD']
+end
+
+
+
 guard :rspec, cmd: 'bin/rspec' do
   # run a spec file if it changes
   watch(%r{^spec/.+_spec\.rb$})
@@ -44,7 +55,7 @@ guard :rspec, cmd: 'bin/rspec' do
   # if something within a view folder changes, run that spec
   # eg app/views/static/anyfile runs /spec/integration/static_pages_spec.rb
   watch(%r{^app/views/(.+)/}) do |m|
-      "spec/integration/#{m[1].singularize}_pages_spec.rb"
+    "spec/integration/#{m[1].singularize}_pages_spec.rb"
   end
 
   # if a controller changes, run the integration tests
@@ -52,7 +63,7 @@ guard :rspec, cmd: 'bin/rspec' do
   # /spec/integration/static_pages_spec.rb
   watch(/^app\/controllers\/(.+)_controller.rb/) do |m|
     ["spec/integration/#{m[1].singularize}_pages_spec.rb",
-     "spec/routing/#{m[1]}_routing_spec.rb"]
+    "spec/routing/#{m[1]}_routing_spec.rb"]
   end
 
 end

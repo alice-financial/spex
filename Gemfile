@@ -45,6 +45,9 @@ group :development do
 
   # rspec_guard_spring
   gem 'spring-commands-rspec'
+
+  # guard_growl
+  gem 'ruby_gntp'
 end
 
 group :development, :test do

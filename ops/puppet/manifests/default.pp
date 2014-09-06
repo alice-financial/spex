@@ -6,3 +6,4 @@ Exec {
 include spex::base_packages
 include spex::postgres_setup
 include spex::ruby_setup
+include spex::dotfile_symlink

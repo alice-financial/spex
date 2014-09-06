@@ -17,6 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :forwarded_port, id: 'ssh', guest: 22, host: 2222
 
   config.vm.synced_folder "./puppet", "/etc/puppet"
+  config.vm.synced_folder 'dotfiles', '/dotfiles'
   config.vm.synced_folder "../", "/app", type: "rsync", rsync__exclude: [".git/", "ops/*", "tmp/", "log/", ".#*"]
 
   config.vm.provider 'virtualbox' do |vb|
@@ -33,7 +34,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     puppet.working_directory = "/etc/puppet"
   end
 
-  # config.vm.provision 'shell', path: 'init_rails_environment.sh', privileged: false
+  config.trigger.before [:up, :reload], :stdout => true do
+    # system('./setup_guest_bash_profile.sh')
+    run "sh ./setup_guest_bash_profile.sh"
+  end
 
   # EACH UP PROVISIONING
   config.vm.provision 'shell', path: 'prep_rails_app.sh', privileged: false, run: 'always'
