@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #make a profile file if it doesnt exist
-bash_file=dotfiles/.bash_profile
+bash_file=dotfiles/guest_bash_profile
 touch $bash_file
 
 add_bash_entry(){

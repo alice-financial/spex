@@ -4,7 +4,7 @@
 class spex::dotfile_symlink{
   file { '/home/vagrant/.bash_profile':
     ensure => link,
-    target => '/dotfiles/.bash_profile'
+    target => '/dotfiles/guest_bash_profile'
   }
 
 }
