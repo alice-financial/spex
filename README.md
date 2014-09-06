@@ -9,11 +9,11 @@ When I try to get a new piece of code working, it's often useful to have a stand
 
 Branch | Description
 -------|------------
-base_ruby_environment | A basic dev box for ruby development. No Rails dependencies. The box installs postgres and sqlite, as well as the ruby 2.1 dev package (can be configured)
-base_rails_app | A smoke test for a rails dev environment, and as close to the output from `rails new ...` as possible. Postgresql is used for Active record instead of SQlite and rubyracer is used as a JavaScript runtime
-building_ruby_from_source | Showing how to compile Ruby from source as part of your Vagrant Box setup
-rspec_guard | Setting up Guard to to run your RSpec tests when files change
-rspec_guard_spring | Setting up Spring with Rspec and Guard to run your tests faster
+[base_ruby_environment] (base_ruby_environment.md) | A basic dev box for ruby development. No Rails dependencies. The box installs postgres and sqlite, as well as the ruby 2.1 dev package (can be configured)
+[base_rails_app] (base_rails_app.md) | A smoke test for a rails dev environment, and as close to the output from `rails new ...` as possible. Postgresql is used for Active record instead of SQlite and rubyracer is used as a JavaScript runtime
+[building_ruby_from_source] (building_ruby_from_source.md)| Showing how to compile Ruby from source as part of your Vagrant Box setup
+[rspec_guard] (rspec_guard.md) | Setting up Guard to to run your RSpec tests when files change
+[rspec_guard_spring] (rspec_guard_spring.md) | Setting up Spring with Rspec and Guard to run your tests faster
 [guard_growl] (guard_growl.md) | Setting up Growl to get notifications from your Virtual Machine
 
 ## Before you begin
