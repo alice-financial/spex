@@ -14,7 +14,7 @@ base_rails_app | A smoke test for a rails dev environment, and as close to the o
 building_ruby_from_source | Showing how to compile Ruby from source as part of your Vagrant Box setup
 rspec_guard | Setting up Guard to to run your RSpec tests when files change
 rspec_guard_spring | Setting up Spring with Rspec and Guard to run your tests faster
-(guard_growl) [guard_growl.md] | Setting up Growl to get notifications from your Virtual Machine
+[guard_growl] (guard_growl.md) | Setting up Growl to get notifications from your Virtual Machine
 
 ## Before you begin
 1. Install [Vagrant] (http://www.vagrantup.com/downloads.html)
