@@ -16,7 +16,10 @@ host_ip = ENV['HOST_IP']
 growl_pass = ENV['GROWL_PASSWORD']
 PLACEHOLDER_GROWL_PASS='enter_growl_password'
 
-unless host_ip.blank? || growl_pass.blank? || (growl_pass==PLACEHOLDER_GROWL_PASS)
+if host_ip.blank? || growl_pass.blank? || (growl_pass==PLACEHOLDER_GROWL_PASS)
+  puts 'host notifcations off: you must set HOST_IP and GROWL_PASSWORD in ops/dotfiles/guest_bash_profile'
+  notification :off
+else
   notification :gntp, :sticky => false, :host => ENV['HOST_IP'], :password => ENV['GROWL_PASSWORD']
 end
 

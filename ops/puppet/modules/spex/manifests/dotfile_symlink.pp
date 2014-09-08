@@ -6,5 +6,4 @@ class spex::dotfile_symlink{
     ensure => link,
     target => '/dotfiles/guest_bash_profile'
   }
-
 }

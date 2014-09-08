@@ -35,7 +35,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.trigger.before [:up, :reload], :stdout => true do
-    # system('./setup_guest_bash_profile.sh')
     run "sh ./setup_guest_bash_profile.sh"
   end
 
