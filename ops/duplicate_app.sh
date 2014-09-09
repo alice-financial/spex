@@ -2,54 +2,84 @@
 # (c) 2014 Eyefodder, author: Paul Barnes-Hoggett
 # This code is licensed under MIT license (see LICENSE.txt for details)
 function duplicate_repo(){
-  cd ../../
-  appname='new_app'
+
+
+  gather_user_input
   tmp_folder="${appname}_tmp"
   old_repo=https://github.com/eyefodder/spex.git
-  new_repo=https://github.com/eyefodder/alice.git
-  branch=duplicating_repo
-
-  # mkdir $appname
 
 
-  # make a bare copy of the repository
+  cd ../../
   clone_old_repo
   checkout_new_repo
-  remove_spex_readmes
+  cd $appname
+  if [ "$branch" != "master" ]
+    then
+    push_branch_and_switch_to_master
+  fi
+
+  remove_spex_app_readmes
   change_start_screen
-  # find_and_replace_spex
   rename_spex_puppet_modules
+  find_and_replace_spex
+  rewrite_homepage
+  commit_changes
+  print_success_message
 
-  echo 'before exit'
-  exit 0
-  echo 'after exit'
+}
+function commit_changes(){
+  git add -A .
+  git commit -m 'initial duplicate from spex repo'
+  git push
+}
+function print_success_message(){
+  echo "-----------------------------------------------------------"
+  echo ""
+  echo "Congrats, you're new app has been created at ../../$appname"
+  echo ""
+  if [ "$branch" != "master" ]
+    then
+    echo "You have one last step. Go into your repository settings and"
+    echo "change your default branch from $branch to 'master'"
+    echo "You can then delete the $branch branch if you want"
+    echo ""
+  fi
+  echo ""
+  echo "Now go 'vagrant up' some damage!"
+}
 
-  # check out the fresh repo
+function gather_user_input(){
+  read -p 'enter app name (in snake_case) ' appname
+  read -p 'enter app name (in CamelCase) ' appname_camel
+  read -p 'enter new repo url ' new_repo
+  git branch
+  read -p "enter branch you want to work on (enter 'master' if you're not sure) " branch
 
-  # remove spex specific folder
-
-  # change gemset
-  sed -i '' -e  "s/spex/$appname/g" Gemfile
-  # change occurrences in config files:
-  find ./config -type f -exec sed -i '' -e "s/spex/$appname/g" {} \;
-  # change ops references
-  find ./ops -type f -exec sed -i '' -e 's/spex/new_app/g' {} \;
-  # rename puppet modules
-  mv ops/puppet/modules/spex ops/puppet/modules/new_app
+}
+function rewrite_homepage(){
+  homepage=app/views/static/home.html.erb
+  echo "<h1>$appname_camel</h1>" > $homepage
+  echo "<p>Duplicated from <a href='https://github.com/eyefodder/spex'>Eyefodder's Spex</a></p>" >> $homepage
+  echo "<p>For more details, go <a href='http://eyefodder.com/2014/09/creating-duplicate-repository.html'>here</a></p>" >> $homepage
+}
+function push_branch_and_switch_to_master(){
+  git push origin $branch:master
+  git checkout master
 }
 function rename_spex_puppet_modules(){
   mv ops/puppet/modules/spex ops/puppet/modules/$appname
 }
 function find_and_replace_spex(){
-  find ./ -type f -exec sed -i '' -e "s/spex/$appname/g" {} \;
+  LC_ALL=C find . -path ./.git -prune -o -not -name 'duplicate_app.sh' -type f -exec sed -i '' -e "s/spex/$appname/g" {} \;
+  LC_ALL=C find . -path ./.git -prune -o -not -name 'duplicate_app.sh' -type f -exec sed -i '' -e "s/spex/$appname_camel/g" {} \;
 }
 function change_start_screen(){
   # change vagrant up message
   sed -i '' -e  "s/spex app example(s)/$appname/g" ops/prep_rails_app.sh
   sed -i '' -e '/begin ascii header/,/end ascii header/d' ops/prep_rails_app.sh
 }
-function remove_spex_readmes(){
-    rm -rf spex_branches
+function remove_spex_app_readmes(){
+  rm -rf spex_branches
   # rewrite the README:
   readme=README.md
   echo $appname > $readme
@@ -58,7 +88,7 @@ function remove_spex_readmes(){
 function checkout_new_repo(){
   rm -rf $appname
   git clone $new_repo $appname
-  cd $appname
+
 }
 
 function clone_old_repo(){
