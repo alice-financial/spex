@@ -40,6 +40,7 @@ add_bash_entry(){
 }
 
 #make a profile file if it doesnt exist
+mkdir -p dotfiles
 bash_file=dotfiles/guest_bash_profile
 touch $bash_file
 
