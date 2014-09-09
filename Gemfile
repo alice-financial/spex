@@ -48,10 +48,16 @@ group :development do
 
   # guard_growl
   gem 'ruby_gntp'
+
+
 end
 
 group :development, :test do
   # rspec_guard
   gem 'rspec-rails', '~> 3.0.0'
+
+  # code_coverage
+  gem 'simplecov', :require => false
+  gem 'simplecov-rcov', :require => false
 end
 

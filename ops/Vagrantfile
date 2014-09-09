@@ -18,7 +18,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.synced_folder "./puppet", "/etc/puppet"
   config.vm.synced_folder 'dotfiles', '/dotfiles'
-  config.vm.synced_folder "../", "/app", type: "rsync", rsync__exclude: [".git/", "ops/*", "tmp/", "log/", ".#*"]
+  config.vm.synced_folder '../coverage', '/coverage'
+  config.vm.synced_folder "../", "/app", type: "rsync", rsync__exclude: [".git/", "ops/*", "coverage/", "tmp/", "log/", ".#*"]
 
   config.vm.provider 'virtualbox' do |vb|
     vb.customize ["modifyvm", :id, "--memory", "1024"]

@@ -15,6 +15,7 @@ Branch | Description
 [rspec_guard] (rspec_guard.md) | Setting up Guard to to run your RSpec tests when files change
 [rspec_guard_spring] (rspec_guard_spring.md) | Setting up Spring with Rspec and Guard to run your tests faster
 [guard_growl] (guard_growl.md) | Setting up Growl to get notifications from your Virtual Machine
+[code_coverage] (code_coverage.md) | Getting code coverage setup on your app
 
 ## Before you begin
 1. Install [Vagrant] (http://www.vagrantup.com/downloads.html)
