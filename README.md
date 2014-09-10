@@ -19,9 +19,11 @@ Branch | Description
 ## Before you begin
 1. Install [Vagrant] (http://www.vagrantup.com/downloads.html)
 2. Install [VirtualBox] (https://www.virtualbox.org/wiki/Downloads)
-3. Open a terminal window and cd to the 'ops' folder of this repo
-4. Type the following (you only need to do this on first run): `vagrant plugin install vagrant-vbguest`
-5. Now type `vagrant up` and witness as a new machine gets downloaded and configured. The guest box is where your code will run when you're working with it.
+3. Install [Vagrant Triggers Plugin] (https://github.com/emyl/vagrant-triggers)
+4. Open a terminal window and cd to the 'ops' folder of this repo
+5. Type the following (you only need to do this on first run): `vagrant plugin install vagrant-vbguest`
+6. Now type `vagrant up` and witness as a new machine gets downloaded and configured. The guest box is where your code will run when you're working with it.
+
 
 
 ### Warnings / Errors you will see that are nothing to worry about
