@@ -52,7 +52,8 @@ function gather_user_input(){
   read -p 'enter app name (in snake_case) ' appname
   read -p 'enter app name (in CamelCase) ' appname_camel
   read -p 'enter new repo url ' new_repo
-  git branch
+  echo "Available branches: "
+  git branch -a
   read -p "enter branch you want to work on (enter 'master' if you're not sure) " branch
 
 }

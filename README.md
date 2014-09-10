@@ -16,13 +16,15 @@ Branch | Description
 [rspec_guard_spring] (spex_branches/rspec_guard_spring.md) | Setting up Spring with Rspec and Guard to run your tests faster
 [guard_growl] (spex_branches/guard_growl.md) | Setting up Growl to get notifications from your Virtual Machine
 [code_coverage] (spex_branches/code_coverage.md) | Getting code coverage setup on your app
+[duplicating_repo] (spex_branches/duplicating_repo.md) | A way to duplicate a rails app (e.g. one of these examples) into a new repo
 
 ## Before you begin
 1. Install [Vagrant] (http://www.vagrantup.com/downloads.html)
 2. Install [VirtualBox] (https://www.virtualbox.org/wiki/Downloads)
-3. Open a terminal window and cd to the 'ops' folder of this repo
-4. Type the following (you only need to do this on first run): `vagrant plugin install vagrant-vbguest`
-5. Now type `vagrant up` and witness as a new machine gets downloaded and configured. The guest box is where your code will run when you're working with it.
+3. Install [Vagrant Triggers Plugin] (https://github.com/emyl/vagrant-triggers)
+4. Open a terminal window and cd to the 'ops' folder of this repo
+5. Type the following (you only need to do this on first run): `vagrant plugin install vagrant-vbguest`
+6. Now type `vagrant up` and witness as a new machine gets downloaded and configured. The guest box is where your code will run when you're working with it.
 
 
 ### Warnings / Errors you will see that are nothing to worry about
