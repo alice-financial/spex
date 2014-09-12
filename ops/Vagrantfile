@@ -36,7 +36,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.trigger.before [:up, :reload], :stdout => true do
-    run "mkdir -p ../coverage"
+    run "mkdir -p ../reports"
     run "sh ./setup_guest_bash_profile.sh"
   end
 

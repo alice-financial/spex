@@ -65,7 +65,9 @@ echo "" >> $bash_file
 add_comment_once "The following are variables set with sensible defaults"
 add_comment_once "You can change them if you like, but make sure you know what they do..."
 echo "" >> $bash_file
+add_bash_entry CI_REPORTS ../reports/spec 'Location for generated ci reporter style test reports\n# this location is set to match the shared folder in the Vagrantfile' 'true'
 add_bash_entry CI_COVERAGE_REPORTS ../reports/coverage 'Location for generated simplecov test reports' 'true'
+add_bash_entry GENERATE_REPORTS true "set to 'true' to output ci reporter style test reports" 'true'
 add_bash_entry GENERATE_COVERAGE_REPORTS true "set to 'true' to output simplecov reports." 'true'
 
 
