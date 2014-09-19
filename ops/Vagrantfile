@@ -13,8 +13,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "eyefodder/precise64-utf8"
   config.vm.host_name = 'spex'
 
-  config.vm.network :forwarded_port, guest: 3000, host: 3001
-  config.vm.network :forwarded_port, id: 'ssh', guest: 22, host: 2222
+  config.vm.network :forwarded_port, guest: 3000, host: 3000, auto_correct: true
 
   config.vm.synced_folder "./puppet", "/etc/puppet"
   config.vm.synced_folder 'dotfiles', '/dotfiles'
@@ -36,7 +35,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.trigger.before [:up, :reload], :stdout => true do
-    run "mkdir -p ../coverage"
+    run "mkdir -p ../reports"
     run "sh ./setup_guest_bash_profile.sh"
   end
 
