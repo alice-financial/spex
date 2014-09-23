@@ -18,7 +18,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder "./puppet", "/etc/puppet"
   config.vm.synced_folder 'dotfiles', '/dotfiles'
   config.vm.synced_folder '../reports', '/reports'
-  config.vm.synced_folder "../", "/app", type: "rsync", rsync__exclude: [".git/", "ops/*", "reports/", "tmp/", "log/", ".#*"]
+  config.vm.synced_folder "../", "/app", type: "rsync", rsync__exclude: [".git/", "ops/*", "reports/", 'public/', "tmp/", "log/", ".#*"]
+  config.vm.synced_folder '../public/', '/app/public'
 
   config.vm.provider 'virtualbox' do |vb|
     vb.customize ["modifyvm", :id, "--memory", "1024"]
@@ -36,6 +37,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.trigger.before [:up, :reload], :stdout => true do
     run "mkdir -p ../reports"
+    run "mkdir -p ../public/uploads"
     run "sh ./setup_guest_bash_profile.sh"
   end
 

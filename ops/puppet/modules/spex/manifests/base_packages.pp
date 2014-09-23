@@ -54,4 +54,7 @@ class spex::base_packages{
   package { "libnotify-bin":
     ensure => installed,
   }
+  package { "imagemagick":
+    ensure => installed,
+  }
 }

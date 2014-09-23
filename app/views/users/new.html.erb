@@ -1,0 +1,26 @@
+<h1>New User</h1>
+
+<%= form_for @user do |f| %>
+  <div>
+  <%= form_error_messages_for! @user %>
+  </div>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :image %>
+    <% if @user.image? %>
+      <%= image_tag(@user.image.thumb.url)  %>
+      <%= f.file_field :image, label: 'change' %>
+    <% else %>
+      <%= image_tag('sample_id.jpg', width: 125)  %>
+      <%= f.file_field :image %>
+    <% end %>
+
+
+  </div>
+  <%= f.hidden_field :image_cache %>
+
+<%= f.submit %>
+<% end %>
