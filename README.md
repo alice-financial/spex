@@ -19,6 +19,7 @@ Branch | Description
 [duplicating_repo] (spex_branches/duplicating_repo.md) | A way to duplicate a rails app (e.g. one of these examples) into a new repo
 [continuous_integration] (spex_branches/continuous_integration.md) | Setting up rspec to output Ci friendly reports
 [image_upload] (spex_branches/image_upload.md) | A simple example of uploading images to the server using [CarrierWave] (https://github.com/carrierwaveuploader/carrierwave)
+[stripe_payments] (spex_branches/stripe_payments.md) | A simpe working example showing use of the [Stripe Payments API] (https://stripe.com/docs/api)
 
 
 ## Before you begin
