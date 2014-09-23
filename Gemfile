@@ -59,5 +59,8 @@ group :development, :test do
   # code_coverage
   gem 'simplecov', :require => false
   gem 'simplecov-rcov', :require => false
+
+  # continuous_integration
+  gem 'ci_reporter_rspec'
 end
 

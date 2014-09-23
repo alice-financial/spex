@@ -17,6 +17,9 @@ Branch | Description
 [guard_growl] (spex_branches/guard_growl.md) | Setting up Growl to get notifications from your Virtual Machine
 [code_coverage] (spex_branches/code_coverage.md) | Getting code coverage setup on your app
 [duplicating_repo] (spex_branches/duplicating_repo.md) | A way to duplicate a rails app (e.g. one of these examples) into a new repo
+[continuous_integration] (spex_branches/continuous_integration.md) | Setting up rspec to output Ci friendly reports
+[image_upload] (spex_branches/image_upload.md) | A simple example of uploading images to the server using [CarrierWave] (https://github.com/carrierwaveuploader/carrierwave)
+
 
 ## Before you begin
 1. Install [Vagrant] (http://www.vagrantup.com/downloads.html)
