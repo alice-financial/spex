@@ -4,7 +4,7 @@ class spex::ruby_setup{
   include apt
   # This is the repo available for Lucid, precise, raring, saucy & trusted
   # @ see http://www.ubuntuupdates.org/ppa/brightbox_ruby_ng_experimental
-  apt::ppa{'ppa:brightbox/ruby-ng-experimental':
+  apt::ppa{'ppa:brightbox/ruby-ng':
     before => Package['ruby'],
   }
   $package = hiera('ruby::params::dev_package')
