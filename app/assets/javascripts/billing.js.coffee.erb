@@ -1,0 +1,31 @@
+ready = ->
+  if $('#verify_card_button').length
+    handler = StripeCheckout.configure(
+      key: $('meta[name="stripe-key"]').attr('content')
+      token: (token, args) ->
+        form = $("#new_stripe_user")
+        user_email = token.email
+        card_token = token.id
+        $("#stripe_user_email").val token.email
+        $("#stripe_user_card_token").val token.id
+        $("#verify_card_button").text "change"
+        $("#verify_card_button").after "<img src='/images/glyphicons_198_ok.png' height='15'/>"
+        return
+    )
+    document.getElementById("verify_card_button").addEventListener "click", (e) ->
+
+      # Open Checkout with further options
+      email = $("#stripe_user_email").val()
+      handler.open
+        name: "Spex"
+        description: "Enter Card Details"
+        panelLabel: "Verify"
+        email: email
+        allowRememberMe: "false"
+      e.preventDefault()
+      return
+
+$(document).ready(ready)
+$(document).on('page:load', ready)
+
+

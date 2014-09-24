@@ -1,0 +1,24 @@
+
+
+<%= form_for @user do |f| %>
+<div>
+<%= form_error_messages_for! @user %>
+</div>
+<div>
+<%= f.label :name %>
+<%= f.text_field :name %>
+</div>
+<div>
+<%= f.label :email %>
+<%= f.email_field :email %>
+</div>
+<div>
+<%= label_tag 'Payment Details' %>
+<%= content_tag(:button, "Add Card", id: 'verify_card_button') %>
+</div>
+<div>
+<%= hidden_field_tag 'stripe_user[card_token]', nil, id: 'stripe_user_card_token' %>
+<%= f.submit 'Create User', id: 'submit_form' %>
+</div>
+
+<% end %>

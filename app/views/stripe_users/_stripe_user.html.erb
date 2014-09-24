@@ -1,0 +1,11 @@
+<tr>
+<%= content_tag(:td, stripe_user.name) %>
+<%= content_tag(:td, stripe_user.email) %>
+<td>
+<%= form_tag charge_user_path, method: :put, id: "charge_user_#{stripe_user.id}" do |f| %>
+  $<%= number_field_tag 'quantity', nil, in: 1...100, step: 0.01 %>
+  <%= hidden_field_tag( :user_id, stripe_user.id ) %>
+  <%= submit_tag 'Charge user', id: 'submit_form' %>
+<% end %>
+</td>
+</tr>

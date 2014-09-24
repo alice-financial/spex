@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'static#home'
 
+  put 'stripe_users/charge',
+      to: 'stripe_users#charge_user',
+      as: :charge_user
+  resources :stripe_users, only: [:index, :new, :create]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

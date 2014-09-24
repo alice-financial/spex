@@ -28,6 +28,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+# stripe_payments
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -49,7 +52,15 @@ group :development do
   # guard_growl
   gem 'ruby_gntp'
 
+  # for annotating models
+  gem 'annotate'
+end
 
+group :test do
+  gem 'factory_girl_rails'
+
+  # stripe_payments
+  gem 'stripe-ruby-mock', '~> 1.10.1.7'
 end
 
 group :development, :test do
@@ -62,5 +73,11 @@ group :development, :test do
 
   # continuous_integration
   gem 'ci_reporter_rspec'
+
+  # capybara
+  gem 'capybara'
+  gem 'rspec-html-matchers'
+
+
 end
 

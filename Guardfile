@@ -50,22 +50,22 @@ guard :rspec, cmd: 'bin/rspec' do
   watch('config/routes.rb')                           { "spec/routing" }
 
   # follow this pattern for any other abstract classes
-  watch('app/controllers/application_controller.rb')  { "spec/integration" }
+  watch('app/controllers/application_controller.rb')  { "spec/features" }
 
   # if any layouts change, re-run integration specs
-  watch(%r{^app/views/layouts/(.*)}) { 'spec/integration' }
+  watch(%r{^app/views/layouts/(.*)}) { 'spec/features' }
 
   # if something within a view folder changes, run that spec
   # eg app/views/static/anyfile runs /spec/integration/static_pages_spec.rb
   watch(%r{^app/views/(.+)/}) do |m|
-    "spec/integration/#{m[1].singularize}_pages_spec.rb"
+    "spec/features/#{m[1].singularize}_pages_spec.rb"
   end
 
   # if a controller changes, run the integration tests
   # eg app/controllers/static_controller.rb runs
   # /spec/integration/static_pages_spec.rb
   watch(/^app\/controllers\/(.+)_controller.rb/) do |m|
-    ["spec/integration/#{m[1].singularize}_pages_spec.rb",
+    ["spec/features/#{m[1].singularize}_pages_spec.rb",
     "spec/routing/#{m[1]}_routing_spec.rb"]
   end
 

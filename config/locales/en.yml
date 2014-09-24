@@ -20,4 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  errors:
+    messages:
+      not_saved:
+        one: "Uh-oh! There's a little problem:"
+        other: "I spy with my little eye, %{count} errors that make me cry:"
