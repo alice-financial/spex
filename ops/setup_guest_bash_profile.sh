@@ -69,9 +69,9 @@ add_bash_entry CI_REPORTS ../reports/spec 'Location for generated ci reporter st
 add_bash_entry CI_COVERAGE_REPORTS ../reports/coverage 'Location for generated simplecov test reports' 'true'
 add_bash_entry GENERATE_REPORTS true "set to 'true' to output ci reporter style test reports" 'true'
 add_bash_entry GENERATE_COVERAGE_REPORTS true "set to 'true' to output simplecov reports." 'true'
-add_bash_entry protected true "set to 'true' to use basic authentication" 'true'
-add_bash_entry protected_name name "Name for basic auth" 'true'
-add_bash_entry protected_password password "password for basic auth" 'true'
+add_bash_entry PROTECTED true "set to 'true' to use basic authentication" 'true'
+add_bash_entry PROTECTED_NAME name "Name for basic auth" 'true'
+add_bash_entry PROTECTED_PASS password "password for basic auth" 'true'
 
 
 # Deal with entries overwritten each time

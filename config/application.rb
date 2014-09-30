@@ -27,9 +27,9 @@ module Spex
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    if ENV['protected']== 'true'
+    if ENV['PROTECTED']== 'true'
       config.middleware.use '::Rack::Auth::Basic' do |u, p|
-        [u, p] == [ENV['protected_name'], ENV['protected_password']]
+        [u, p] == [ENV['PROTECTED_NAME'], ENV['PROTECTED_PASS']]
       end
     end
   end

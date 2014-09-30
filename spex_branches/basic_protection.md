@@ -8,4 +8,4 @@ app from casual access. It slots in HTTP basic authentication into your [Rack mi
 * protected_name
 * protected_password
 
-For more details, read my post about the app [on my blog] (http://www.eyefodder.com/2014/08/building-pristine-rails-virtual-machine.html)
+For more details, read my post about the app [on my blog] ( http://eyefodder.com/2014/10/rails-basic-auth.html)
