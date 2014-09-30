@@ -20,6 +20,7 @@ Branch | Description
 [continuous_integration] (spex_branches/continuous_integration.md) | Setting up rspec to output Ci friendly reports
 [image_upload] (spex_branches/image_upload.md) | A simple example of uploading images to the server using [CarrierWave] (https://github.com/carrierwaveuploader/carrierwave)
 [stripe_payments] (spex_branches/stripe_payments.md) | A simpe working example showing use of the [Stripe Payments API] (https://stripe.com/docs/api)
+[basic_protection] (spex_branches/basic_protection.md) | A simpe strategy for protecting a demo site using basic authentication
 
 
 ## Before you begin
