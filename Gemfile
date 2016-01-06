@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.2'
+ruby '2.1.8'
 #ruby-gemset=spex
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -63,4 +63,3 @@ group :development, :test do
   # continuous_integration
   gem 'ci_reporter_rspec'
 end
-
