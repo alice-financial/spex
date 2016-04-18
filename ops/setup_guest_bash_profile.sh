@@ -69,6 +69,7 @@ add_bash_entry CI_REPORTS ../reports/spec 'Location for generated ci reporter st
 add_bash_entry CI_COVERAGE_REPORTS ../reports/coverage 'Location for generated simplecov test reports' 'true'
 add_bash_entry GENERATE_REPORTS true "set to 'true' to output ci reporter style test reports" 'true'
 add_bash_entry GENERATE_COVERAGE_REPORTS true "set to 'true' to output simplecov reports." 'true'
+add_bash_entry AUTHY_API_KEY 'dgwejdwddwed' "your authy api key"
 
 
 # Deal with entries overwritten each time
