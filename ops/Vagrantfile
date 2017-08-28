@@ -34,6 +34,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     puppet.working_directory = "/etc/puppet"
   end
 
+  # build ruby from source
+  config.vm.provision 'shell', path: 'build_ruby_from_source.sh'
+
   config.trigger.before [:up, :reload], :stdout => true do
     run "mkdir -p ../reports"
     run "sh ./setup_guest_bash_profile.sh"
