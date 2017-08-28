@@ -32,5 +32,10 @@ ops/puppet/modules/firewall/
 ops/puppet/modules/postgresql/
 ops/puppet/modules/ruby/
 ops/puppet/modules/stdlib/
+ops/puppet/modules/debconf/
+ops/puppet/modules/gcc/
+ops/puppet/modules/redis/
+ops/puppet/modules/timezone/
+ops/puppet/modules/wget/
 
 ops/dotfiles/guest_bash_profile

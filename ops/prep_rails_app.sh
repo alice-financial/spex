@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # init
 
 # (c) 2014 Eyefodder, author: Paul Barnes-Hoggett
@@ -6,12 +7,9 @@
 cd /app
 echo 'installing app dependencies'
 bundle install
-echo 'creating databases (if needed)'
-rake db:create
+#npm install
 echo 'performing migrations'
-rake db:migrate
-echo 'seeding the db'
-rake db:seed
+bundle exec rake db:migrate
 # begin ascii header
 echo '
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
