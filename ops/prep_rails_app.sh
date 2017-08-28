@@ -3,12 +3,22 @@
 
 # (c) 2014 Eyefodder, author: Paul Barnes-Hoggett
 # This code is licensed under MIT license (see LICENSE.txt for details)
+cd /app
+echo 'installing app dependencies'
+bundle install
+echo 'creating databases (if needed)'
+rake db:create
+echo 'performing migrations'
+rake db:migrate
+echo 'seeding the db'
+rake db:seed
+# begin ascii header
 echo '
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 $$                                                                            $$
 $$                                                                            $$
-$$                /$$$$$$$  /$$$$$$   /$$$$$$  /$$   /$$                      $$
-$$               /$$_____/ /$$__  $$ /$$__  $$|  $$ /$$/                      $$
+$$               /$$$$$$$  /$$$$$$   /$$$$$$  /$$   /$$                       $$
+$$              /$$_____/ /$$__  $$ /$$__  $$|  $$ /$$/                       $$
 $$              |  $$$$$$ | $$  \ $$| $$$$$$$$ \  $$$$/                       $$
 $$               \____  $$| $$  | $$| $$_____/  >$$  $$                       $$
 $$               /$$$$$$$/| $$$$$$$/|  $$$$$$$ /$$/\  $$                      $$
@@ -18,6 +28,9 @@ $$                        | $$                                                $$
 $$                        |__/                                                $$
 $$                                                                            $$
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+'
+# end ascii header
+echo '
 
 
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -31,15 +44,28 @@ $$    following command to keep things in synch:                              $$
 $$                                                                            $$
 $$                            "vagrant rsync-auto"                            $$
 $$                                                                            $$
-$$    When you have done that, the root folder of this repo will be           $$
-$$    accessible within the VM at `/app` To go check it out, you can ssh      $$
-$$    into the machine really simply:                                         $$
+$$    The provisioning script has setup some environment variables on the     $$
+$$    gueast machine that are in `ops/dotfiles/.bash_profile` You should      $$
+$$    go ahead and take a look in there. Some values you will need to enter   $$
+$$    yourself. You can do this now before you ssh into the machine.          $$
+$$    If you want to make changes and ensure they are picked up in your       $$
+$$    environment, simply type the following from within the ssh shell:       $$
+$$                                                                            $$
+$$                      source ~/.bash_profile                                $$
+$$                                                                            $$
+$$    You are now ready to start the app. In order to do this, you need to    $$
+$$    jump into the virtual machine and start the app:                        $$
 $$                                                                            $$
 $$                            vagrant ssh                                     $$
+$$                            cd /app                                         $$
+$$                            rails s                                         $$
 $$                                                                            $$
-$$                            cd /app and there it is...                      $$
+$$    When you have done that, the app will be accessible at                  $$
 $$                                                                            $$
-$$    See! that was simple wasnt it?!!                                        $$
+$$                            http://localhost:3001                           $$
+$$                                                                            $$
+$$      See! that was easy wasnt it?!!                                        $$
 $$                                                                            $$
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 '
+

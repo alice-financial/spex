@@ -5,13 +5,12 @@ capybara-*.html
 /tmp
 /db/*.sqlite3
 /public/system
-/coverage/
+/reports/
 /spec/tmp
 **.orig
 rerun.txt
 pickle-email-*.html
 config/initializers/secret_token.rb
-config/secrets.yml
 
 ## Environment normalisation:
 /.bundle
@@ -23,8 +22,7 @@ config/secrets.yml
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
 
-
-#ignore devops stuff
+# ignore devops stuff
 ops/.vagrant/
 ops/puppet/ssh/
 ops/puppet/ssl/
@@ -34,3 +32,5 @@ ops/puppet/modules/firewall/
 ops/puppet/modules/postgresql/
 ops/puppet/modules/ruby/
 ops/puppet/modules/stdlib/
+
+ops/dotfiles/guest_bash_profile

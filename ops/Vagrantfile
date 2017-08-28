@@ -13,11 +13,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "eyefodder/precise64-utf8"
   config.vm.host_name = 'spex'
 
-  config.vm.network :forwarded_port, guest: 3000, host: 3001
-  config.vm.network :forwarded_port, id: 'ssh', guest: 22, host: 2222
+  config.vm.network :forwarded_port, guest: 3000, host: 3000, auto_correct: true
 
   config.vm.synced_folder "./puppet", "/etc/puppet"
-  config.vm.synced_folder "../", "/app", type: "rsync", rsync__exclude: [".git/", "ops/*", "tmp/", "log/", ".#*"]
+  config.vm.synced_folder 'dotfiles', '/dotfiles'
+  config.vm.synced_folder '../reports', '/reports'
+  config.vm.synced_folder "../", "/app", type: "rsync", rsync__exclude: [".git/", "ops/*", "reports/", "tmp/", "log/", ".#*"]
 
   config.vm.provider 'virtualbox' do |vb|
     vb.customize ["modifyvm", :id, "--memory", "1024"]
@@ -36,6 +37,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # build ruby from source
   config.vm.provision 'shell', path: 'build_ruby_from_source.sh'
 
+  config.trigger.before [:up, :reload], :stdout => true do
+    run "mkdir -p ../reports"
+    run "sh ./setup_guest_bash_profile.sh"
+  end
+
   # EACH UP PROVISIONING
-  config.vm.provision 'shell', path: 'post_up_message.sh', run: 'always'
+  config.vm.provision 'shell', path: 'prep_rails_app.sh', privileged: false, run: 'always'
+
 end

@@ -8,3 +8,4 @@ include spex::postgres_setup
 
 # In this branch we are building ruby from source
 # include spex::ruby_setup
+include spex::dotfile_symlink

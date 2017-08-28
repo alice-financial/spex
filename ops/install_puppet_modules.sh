@@ -7,11 +7,12 @@ apt-get update >/dev/null 2>&1
 echo 'updated'
 
 echo 'installing puppet'
-gem update puppet --no-rdoc --no-ri
+# gem update puppet --no-rdoc --no-ri
+gem install puppet -v 3.7.5 --no-rdoc --no-ri
 
 if [ ! -e "/etc/puppet/modules/apt/" ]; then
   echo 'installing apt module'
-  puppet module install puppetlabs-apt --modulepath /etc/puppet/modules
+  puppet module install puppetlabs-apt --version 1.6.0 --modulepath /etc/puppet/modules
 else
   echo 'apt module already installed'
 fi
@@ -22,4 +23,3 @@ if [ ! -e "/etc/puppet/modules/postgresql/" ]; then
 else
   echo 'postgresql module already installed'
 fi
-
