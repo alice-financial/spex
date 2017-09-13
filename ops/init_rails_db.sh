@@ -3,7 +3,7 @@
 cd /app
 echo 'installing app dependencies'
 bundle install
-echo 'creating databases '
+echo 'creating databases'
 bundle exec rake db:create
 #bundle exec rake parallel:create
 

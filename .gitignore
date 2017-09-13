@@ -39,3 +39,6 @@ ops/puppet/modules/timezone/
 ops/puppet/modules/wget/
 
 ops/dotfiles/guest_bash_profile
+
+# rubymine
+.idea
