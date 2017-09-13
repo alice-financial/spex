@@ -21,9 +21,9 @@ else
   make install >/dev/null 2>&1
   echo "ruby installed"
 
-echo "install bundler"
-gem install bundler -v 1.14
+  echo "install bundler"
+  gem install bundler -v 1.14
 
-echo "install foreman"
-gem install foreman
+  echo "install foreman"
+  gem install foreman
 fi

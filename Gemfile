@@ -14,7 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'libv8', '3.16.14.11'
+#gem 'libv8', '3.16.14.11'
 gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
@@ -55,7 +55,7 @@ end
 
 group :development, :test do
   # rspec_guard
-  gem 'rspec-rails', '~> 3.0.0'
+  gem 'rspec-rails'
 
   # code_coverage
   gem 'simplecov', :require => false
